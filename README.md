@@ -108,21 +108,21 @@ On doit récuperer l'ip de notre serveur avec cette commande.
 ```
 kubectl get pods mysql-wordpress-0 -n namespace-back -o yaml 
 ```
-![ipserveurmysql](images/screenshot_2.jpg)
+![ipserveurmysql](https://github.com/thomasmlc/tp_devops/blob/main/images/Screenshot_2.jpg)
 
 Afin de récuperer notre username et notre password nous devons fouiller les secrets de notre namespace et notament mysql-wordpress-auth.
 ```
 kubectl get secrets mysql-wordpress-auth -n namespace-back -o yaml
 ```
-![ipserveurmysql](images/screenshot_3.jpg)
+![](https://github.com/thomasmlc/tp_devops/blob/main/images/Screenshot_3.jpg)
 
 Une fois decodé ca nous donne 
 ```
 username: root
 password: 7WMLM&p)ws-,jx2c
 ```
-C'est ici que la partie kubedb s'arrete car après ca une erreur est apparue nous empechant de nous connecter une fois sur deux et lorsque nous arrivon a nous connecter nous sommes rammené sur la page de login après quelques manipulations.  ![ipserveurmysql](images/screenshot_4.jpg)
-![ipserveurmysql](images/screenshot_5.jpg)  
+C'est ici que la partie kubedb s'arrete car après ca une erreur est apparue nous empechant de nous connecter une fois sur deux et lorsque nous arrivon a nous connecter nous sommes rammené sur la page de login après quelques manipulations.  ![](https://github.com/thomasmlc/tp_devops/blob/main/images/Screenshot_4.jpg)
+![](https://github.com/thomasmlc/tp_devops/blob/main/images/Screenshot_5.jpg)  
 
 ### CRD
 
@@ -146,17 +146,17 @@ wordpress           LoadBalancer   10.0.51.171   40.88.243.233   80:32581/TCP,44
 wordpress-mariadb   ClusterIP      10.0.144.27   <none>          3306/TCP                     2d6h
 ```
 Nous récupérons l'IP externe qui permet d' acceder à notre wordpress.
-![ipserveurmysql](images/screenshot_7.jpg)
+![](https://github.com/thomasmlc/tp_devops/blob/main/images/Screenshot_7.jpg)
 Nous pouvons également récuperer les identifiant administrateur avec les secrets.  
 ```
 kubectl get secrets wordpress -n namespace-front -o yaml
 ````
-![ipserveurmysql](images/screenshot_6.jpg)  
+![](https://github.com/thomasmlc/tp_devops/blob/main/images/Screenshot_6.jpg)  
 Ce qui donne 
 ```
 kDcPpQ0VEV
 ```
-![ipserveurmysql](images/screenshot_8.jpg)
+![](https://github.com/thomasmlc/tp_devops/blob/main/images/Screenshot_8.jpg)
 
 ## 4. RBAC 
 
@@ -186,17 +186,17 @@ Pour trouver les mots de passe il faut fouiller les secrets.
 ```
 kubectl get secrets grafanaa -n monitoring -o yaml
 ```
-![ipserveurmysql](images/screenshot_9.jpg)
+![](https://github.com/thomasmlc/tp_devops/blob/main/images/Screenshot_9.jpg)
 
 ce qui donne
 ```
 user: admin
 password: leFCroOZ70N4MtaspXklNDx7R9Lc2wXKzLz0dwsF
 ```
-![ipserveurmysql](images/screenshot_10.jpg)
+![](https://github.com/thomasmlc/tp_devops/blob/main/images/Screenshot_10.jpg)
 
 En allant dans les data-source on devrait retrouver notre prometheus ou alors nous le créons nous meme.  
-![ipserveurmysql](images/screenshot_11.jpg)
+![ipserveurmysql](https://github.com/thomasmlc/tp_devops/blob/main/images/Screenshot_11.jpg)
 
 en ainsi en important un dashboard de base avec l'ID 315 nous obtenons
-![ipserveurmysql](images/screenshot_12.jpg)
+![ipserveurmysql](https://github.com/thomasmlc/tp_devops/blob/main/images/Screenshot_12.jpg)
