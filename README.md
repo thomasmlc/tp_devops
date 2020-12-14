@@ -96,7 +96,7 @@ Afin de récuperer l'IP de notre phpmyadmin on fait
 ```
 kubectl get service -n namespace-back
 ```
-![ip_phpadmin](images/screenshot_1.jpg)
+![ip_phpadmin](https://github.com/thomasmlc/tp_devops/blob/main/images/Screenshot_1.jpg)
 
 Nous devons également créer une bdd mysql avec un pod.  
 [docker-mysql.yaml](docker-mysql.yaml)
