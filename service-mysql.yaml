@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: service-mysql
+  name: service-mysql
+  namespace: namespace-back
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: service-mysql
+  template:
+    metadata:
+      labels:
+        app: service-mysql
+    spec:
+      containers:
+      - image: phpmyadmin/phpmyadmin
+        imagePullPolicy: Always
+        name: phpmyadmin
+        ports:
+        - containerPort: 80
+          name: http
+          protocol: TCP
+        env:
+          - name: PMA_ARBITRARY
+            value: '1'
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: service-mysql
+  name: service-mysql
+  namespace: namespace-back
+spec:
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: http
+  selector:
+    app: service-mysql
+  type: LoadBalancer

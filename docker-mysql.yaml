@@ -1,0 +1,19 @@
+apiVersion: kubedb.com/v1alpha2
+kind: MySQL
+metadata:
+  name: mysql-wordpress
+spec:
+  version: "8.0.21"
+  storageType: Durable
+  storage:
+    storageClassName: default
+    accessModes:
+      - ReadWriteOnce
+    resources:
+      requests:
+        storage: 500Mi
+        cpu: 250M
+      limits:
+        cpu: 250M
+        memory: 512Mi
+  terminationPolicy: WipeOut
