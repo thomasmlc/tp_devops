@@ -161,6 +161,8 @@ kDcPpQ0VEV
 ## 4. RBAC 
 On peut créer les roles dans azure a l'aide du Access control
 ![](https://github.com/thomasmlc/tp_devops/blob/main/images/Screenshot_13.jpg)
+malheuresement n'ayant rien de vraiment fonctionnel mais roles sont faux et inutiles.  
+Les actions que l'on peut autoriser ou interdir sont listés [ici](https://docs.microsoft.com/fr-fr/azure/role-based-access-control/resource-provider-operations)
 
 ## 5. Monitoring
 On installe prometheus et grafana sur nnotre namespace monitoring grace a HELM. 
