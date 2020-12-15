@@ -159,6 +159,8 @@ kDcPpQ0VEV
 ![](https://github.com/thomasmlc/tp_devops/blob/main/images/Screenshot_8.jpg)
 
 ## 4. RBAC 
+On peut créer les roles dans azure a l'aide du Access control
+![](https://github.com/thomasmlc/tp_devops/blob/main/images/Screenshot_13.jpg)
 
 ## 5. Monitoring
 On installe prometheus et grafana sur nnotre namespace monitoring grace a HELM. 
